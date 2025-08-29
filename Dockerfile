@@ -6,6 +6,6 @@ RUN corepack enable yarn
 RUN apk add git
 RUN apk add openssh-keygen
 RUN apk add openssh-client
-RUN mkdir /app
+COPY --exclude=node_modules --exclude=.next . /app
 
 EXPOSE 8080
